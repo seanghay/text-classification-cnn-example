@@ -1,5 +1,13 @@
 ## Food Category Classification
 
+```shell
+git clone --recursive https://github.com/seanghay/text-classification-cnn-example.git
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+python3 infer.py
+```
+
 ```python
 import torch
 import sentencepiece as spm
