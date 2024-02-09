@@ -1,3 +1,6 @@
+## Food Category Classification
+
+```python
 import torch
 import sentencepiece as spm
 from models import TextCNN
@@ -29,3 +32,4 @@ with torch.no_grad():
     print(list(map(lambda x: idx2label[x], ids.tolist())))
     # => ['កាហ្វេ Coffee', 'កាហ្វេ តែ នំ នំប៉័ង', 'អាហារពេលព្រឹក', 'អាហារពេលថ្ងៃត្រង់', 'អាហារពេលល្ងាច']
     
+```
