@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Text CNN</title>
+	</head>
+	<body
+		style="font-family: 'Kantumruy Pro', Arial, Helvetica, sans-serif; margin: 0; padding: 0"
+	>
+		<div style="margin: 0 auto; max-width: 720px; padding: 1rem">
+			<h2>Text CNN</h2>
+			<p>A simple food category classification</p>
+			<label for="text_input">Input text</label>
+			<br />
+			<textarea
+				style="color: black; width: 100%; padding: 1rem; border: 1px solid black; font-family: inherit; font-size: 1.1rem;"
+				placeholder="Downloading model and tokenizer…"
+				cols="50"
+				rows="10"
+				id="text_input"
+				name="text_input"
+				disabled
+			></textarea>
+			<br />
+			<label for="tokens">Predicted Class:</label>
+			<br />
+			<textarea
+				readonly
+				style="color: darkcyan; width: 100%; border: 1px solid black; font-family: inherit; font-size: 1.1rem"
+				placeholder="Predicted Class"
+				cols="50"
+				disabled
+				rows="10"
+				id="tokens"
+				name="tokens"
+			></textarea>
+		</div>
+		<script type="module" src="./app.js"></script>
+	</body>
+</html>

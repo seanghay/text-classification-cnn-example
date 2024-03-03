@@ -6,6 +6,7 @@ tokenizer = spm.SentencePieceProcessor(model_file="tokenizer.model")
 model = TextCNN()
 model.load_state_dict(torch.load("checkpoint_14.pth"))
 model.eval()
+
 idx2label = {
     0: "អាហារតាមផ្លូវ",
     1: "អាហារល្បីតាមតំបន់",
@@ -19,13 +20,15 @@ idx2label = {
     9: "កាហ្វេ Coffee",
 }
 
-with torch.no_grad():
-    text = "starbucks coffee"
+with torch.inference_mode():
+    text = "sakura sskflalasfjasdkfa"
     input_ids = tokenizer.encode(text.lower().replace("\u200b", ""))
     input_ids = input_ids + [3] * (128 - len(input_ids))
+    print(input_ids)
     input_ids = torch.LongTensor(input_ids).unsqueeze(0)
+    print(input_ids.shape)
     logits = model(input_ids)
     ids = torch.topk(logits.flatten(), k=5).indices   
     print(list(map(lambda x: idx2label[x], ids.tolist())))
-    # => ['កាហ្វេ Coffee', 'កាហ្វេ តែ នំ នំប៉័ង', 'អាហារពេលព្រឹក', 'អាហារពេលថ្ងៃត្រង់', 'អាហារពេលល្ងាច']
+    
     
